@@ -33,10 +33,10 @@
     </nav>
     <div class="container font-monospace" style="padding-top: 0px;margin-top: 29px;">
         <div class="btn-group-vertical btn-group-lg shadow-lg focus-ring d-flex d-md-flex justify-content-center m-auto justify-content-md-center" role="group" style="transform: perspective(0px) translate(0px) rotate(0deg) scale(1);backdrop-filter: grayscale(0%);">
-            <!-- Hinzugefügte IDs für die Buttons -->
-            <button class="btn btn-primary" type="button" id="leichtButton">Leicht</button>
-            <button class="btn btn-primary" type="button" id="mittelButton">Mittel</button>
-            <button class="btn btn-primary" type="button" id="schwerButton">Schwer</button>
+            <!-- Hinzugefügte IDs und Stile für die Buttons -->
+            <button class="btn btn-primary" type="button" id="leichtButton" style="background: rgba(34,34,34,0);box-shadow: inset 0px 0px 15px rgb(0,255,0), 0px 0px 15px rgb(0,255,0);border-color: rgba(0,255,0,0.61);">Leicht</button>
+            <button class="btn btn-primary" type="button" id="mittelButton" style="background: rgba(255,153,0,0);box-shadow: 0px 0px 20px 5px rgb(216,140,2), inset 0px 0px 20px 5px rgb(216,140,2);border-color: #d88c02;">Mittel</button>
+            <button class="btn btn-primary" type="button" id="schwerButton" style="background: rgba(226,61,40,0);box-shadow: 0px 0px 20px 5px rgb(226,61,40), inset 0px 0px 20px 5px rgb(226,61,40);border-color: rgb(226,61,40);">Schwer</button>
         </div>
     </div>
     <footer class="font-monospace text-center bg-dark fixed-bottom">
@@ -55,11 +55,11 @@
     <script>
         // JavaScript-Code, um auf den Klick der Buttons zu reagieren
         document.getElementById("leichtButton").addEventListener("click", function () {
-            window.location.href = "https://hxf1302.github.io/baby-game/playerselector.html#l";
+            window.location.href = "https://hxf1302.github.io/baby-game/player-selector.html#l";
         });
 
         document.getElementById("mittelButton").addEventListener("click", function () {
-            window.location.href = "https://hxf1302.github.io/baby-game/playerselector.html#m";
+            window.location.href = "https://hxf1302.github.io/baby-game/player-selector.html#m";
         });
 
         document.getElementById("schwerButton").addEventListener("click", function () {
