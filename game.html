@@ -1,4 +1,7 @@
-<!doctype html>
+Es scheint, als ob `currentJsonIndex` nicht korrekt initialisiert wurde. Du solltest `currentJsonIndex` am Anfang deines Skripts definieren. Hier ist eine aktualisierte Version deines Skripts mit der Definition von `currentJsonIndex`:
+
+```html
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Title</title>
@@ -20,21 +23,16 @@
         </div>
     </div>
 
-
     <script>
-        // JSON-Dateien mit den Einträgen
         var jsonFiles = ["1.json", "2.json", "3.json", "4.json", "5.json"];
         var score = 0;
+        var currentJsonIndex = 0; // Hier wird currentJsonIndex definiert
         
-        // Funktion zum Laden der JSON-Datei
         function loadJson() {
-            // Prüfen, ob alle Einträge aus der aktuellen JSON-Datei geladen wurden
             if (currentJsonIndex >= jsonFiles.length) {
                 alert("Alle Einträge geladen. Wechsle zur nächsten JSON-Datei.");
                 currentJsonIndex = 0;
             }
-        
-            // JSON-Datei laden
             var jsonFile = jsonFiles[currentJsonIndex];
             fetch(jsonFile)
                 .then(response => response.json())
@@ -63,18 +61,6 @@
         
         // Initialisierung: Erste JSON-Datei laden
         loadJson();
-        </script>
-        
-
-
-
-    <footer>
-        <a>made by </a><a href="https://github.com/HXF1302">HXF1302</a>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </script>
   </body>
 </html>
