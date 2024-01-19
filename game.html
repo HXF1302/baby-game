@@ -26,23 +26,23 @@
         var score = 0;
         var currentJsonIndex = 0; // Hier wird currentJsonIndex definiert
         
-            var hash = window.location.hash;
-            if (hash) {
-                var jsonFile = hash.substring(1) + ".json";
-                fetch(jsonFile)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Zufälligen Eintrag auswählen
-                        var randomEntry = data[Math.floor(Math.random() * data.length)];
-            
-                        // Eintrag in die Card einfügen
-                        document.getElementById('cardTitle').innerText = randomEntry.title;
-                        document.getElementById('cardDescription').innerText = randomEntry.description;
-                    })
-                    .catch(error => console.error('Fehler beim Laden der JSON-Datei:', error));
-            } else {
-                alert("Kein Hashtag in der URL gefunden.");
+        function loadJson() {
+            if (currentJsonIndex >= jsonFiles.length) {
+                alert("Alle Einträge geladen. Wechsle zur nächsten JSON-Datei.");
+                currentJsonIndex = 0;
             }
+            var jsonFile = jsonFiles[currentJsonIndex];
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    // Zufälligen Eintrag auswählen
+                    var randomEntry = data[Math.floor(Math.random() * data.length)];
+        
+                    // Eintrag in die Card einfügen
+                    document.getElementById('cardTitle').innerText = randomEntry.title;
+                    document.getElementById('cardDescription').innerText = randomEntry.description;
+                })
+                .catch(error => console.error('Fehler beim Laden der JSON-Datei:', error));
         }
         
         // Funktion zum Überspringen der Karte
